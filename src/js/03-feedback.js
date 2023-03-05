@@ -14,30 +14,30 @@ messageData();
 function onFormInput(e) {
   e.preventDefault();
 
-    const feedbackInfo = {
-        email: emailInput.value,
-        message: messageInput.value,
-    };
+  const feedbackInfo = {
+    email: emailInput.value,
+    message: messageInput.value,
+  };
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(feedbackInfo));
 }
 
 function onFormSubmit(e) {
-    e.preventDefault();
-    const feedbackInfo = {
-        email: emailInput.value,
-        message: messageInput.value,
-    };
-    console.log(feedbackInfo);       
-    e.currentTarget.reset();
-    localStorage.removeItem(STORAGE_KEY);
+  e.preventDefault();
+  const feedbackInfo = {
+    email: emailInput.value,
+    message: messageInput.value,
+  };
+  console.log(feedbackInfo);
+  e.currentTarget.reset();
+  localStorage.removeItem(STORAGE_KEY);
 }
 
-function messageData(e) { 
-    const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+function messageData(e) {
+  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-    if (savedMessage) { 
-        emailInput.value = savedMessage.email;
-        messageInput.value = savedMessage.message;
-    }
-} 
+  if (savedMessage) {
+    emailInput.value = savedMessage.email;
+    messageInput.value = savedMessage.message;
+  }
+}
