@@ -10,7 +10,7 @@ console.log(galleryItems);
 const galleryContainer = document.querySelector(".gallery");
 const cardsMurkup = createGalleryItemsMarkup(galleryItems);
 
-galleryContainer.addEventListener("click", onGalleryContainerClick);
+// galleryContainer.addEventListener("click", onGalleryContainerClick);
 
 galleryContainer.insertAdjacentHTML("beforeend", cardsMurkup);
 
@@ -32,18 +32,19 @@ function createGalleryItemsMarkup(galleryItems) {
     })
     .join("");
 }
-function onGalleryContainerClick(e) {
-  e.preventDefault();
-  const isGalleryImage = e.target.classList.contains("gallery__image");
-   if (!isGalleryImage) {
-    return;
-  }
+
+// function onGalleryContainerClick(e) {
+//   e.preventDefault();
+//   const isGalleryImage = e.target.classList.contains("gallery__image");
+//    if (!isGalleryImage) {
+//     return;
+//   }
   // if (e.target.nodeName !== 'IMG') {
   //   return;
   // }
 
-}
+// }
 
-galleryContainer.addEventListener("keydown", (e) => { 
-   instance.close();
-});
+// galleryContainer.addEventListener("keydown", (e) => { 
+//    instance.close();
+// });

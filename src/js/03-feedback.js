@@ -28,9 +28,13 @@ function onFormSubmit(e) {
     email: emailInput.value,
     message: messageInput.value,
   };
-  console.log(feedbackInfo);
-  e.currentTarget.reset();
-  localStorage.removeItem(STORAGE_KEY);
+  if (feedbackInfo.email === '' || feedbackInfo.message === '') {
+    return alert('Please fill in all the fields!');
+  } else {
+    console.log(feedbackInfo);
+    e.currentTarget.reset();
+    localStorage.removeItem(STORAGE_KEY);
+  }
 }
 
 function messageData(e) {
